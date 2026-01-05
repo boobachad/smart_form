@@ -1,0 +1,283 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
+  /* Border Radius System - Larger, More Refined */
+  --radius-sm: 0.375rem;
+  /* 6px */
+  --radius-md: 0.5rem;
+  /* 8px */
+  --radius-lg: 0.75rem;
+  /* 12px */
+  --radius-xl: 1rem;
+  /* 16px */
+  --radius: 0.5rem;
+  /* Default to md */
+  /* Disable all shadows */
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
+  --shadow-inner: none;
+  --shadow: none;
+  --drop-shadow-sm: none;
+  --drop-shadow-md: none;
+  --drop-shadow-lg: none;
+  --drop-shadow-xl: none;
+  --drop-shadow-2xl: none;
+  --drop-shadow: none;
+}
+
+/* 
+  Moonlight Slate Design System
+  Premium, conversational, spacious
+*/
+:root {
+  /* Foundational Monochrome */
+  --background: #fafafa;
+  /* Pure light gray */
+  --foreground: #09090b;
+  /* Near black (Zinc-950) */
+
+  --card: #ffffff;
+  --card-foreground: #09090b;
+
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+
+  /* Primary: Deep Violet - Creative, premium */
+  --primary: #7c3aed;
+  /* Violet-600 */
+  --primary-foreground: #ffffff;
+
+  /* Neutrals - Zinc palette */
+  --secondary: #f4f4f5;
+  /* Zinc-100 */
+  --secondary-foreground: #18181b;
+  /* Zinc-900 */
+
+  --muted: #fafafa;
+  --muted-foreground: #71717a;
+  /* Zinc-500 */
+
+  --accent: #faf5ff;
+  /* Violet-50 */
+  --accent-foreground: #7c3aed;
+
+  /* Functional Colors */
+  --destructive: #dc2626;
+  /* Red-600 */
+  --destructive-foreground: #ffffff;
+
+  --warning: #f59e0b;
+  /* Amber-500 */
+  --warning-foreground: #78350f;
+
+  --info: #3b82f6;
+  /* Blue-500 */
+  --info-foreground: #eff6ff;
+
+  --success: #059669;
+  /* Emerald-600 */
+  --success-foreground: #ecfdf5;
+
+  /* Legacy Functional Colors (compatibility) */
+  --color-success: #059669;
+  --color-success-fg: #047857;
+  --color-success-subtle: #ecfdf5;
+  --color-success-border: #a7f3d0;
+
+  --color-error-fg: #dc2626;
+
+  /* Borders & Inputs - Subtle */
+  --border: #e4e4e7;
+  /* Zinc-200 */
+  --input: #e4e4e7;
+  --ring: #7c3aed;
+  /* Match primary */
+}
+
+.dark {
+  /* Near-Pure Black Foundation */
+  --background: #09090b;
+  /* Zinc-950 */
+  --foreground: #fafafa;
+
+  --card: #18181b;
+  /* Zinc-900 - elevated */
+  --card-foreground: #fafafa;
+
+  --popover: #18181b;
+  --popover-foreground: #fafafa;
+
+  /* Primary: Bright Violet - Pops on dark */
+  --primary: #a78bfa;
+  /* Violet-400 */
+  --primary-foreground: #09090b;
+
+  --secondary: #27272a;
+  /* Zinc-800 */
+  --secondary-foreground: #fafafa;
+
+  --muted: #18181b;
+  /* Zinc-900 */
+  --muted-foreground: #a1a1aa;
+  /* Zinc-400 */
+
+  --accent: #2e1065;
+  /* Violet-950 */
+  --accent-foreground: #a78bfa;
+
+  --destructive: #f87171;
+  /* Red-400 */
+  --destructive-foreground: #09090b;
+
+  --warning: #fbbf24;
+  /* Amber-400 */
+  --warning-foreground: #78350f;
+
+  --info: #60a5fa;
+  /* Blue-400 */
+  --info-foreground: #dbeafe;
+
+  --success: #34d399;
+  /* Emerald-400 */
+  --success-foreground: #064e3b;
+
+  /* Legacy Functional Colors Dark */
+  --color-success: #34d399;
+  --color-success-fg: #6ee7b7;
+  --color-success-subtle: #064e3b;
+  --color-success-border: #065f46;
+
+  --color-error-fg: #f87171;
+
+  --border: #27272a;
+  /* Zinc-800 */
+  --input: #27272a;
+  --ring: #a78bfa;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    /* Larger base text for readability */
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Typography Hierarchy - Refined */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans font-semibold tracking-tight;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* 32px */
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* 24px */
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  /* 20px */
+  h4 {
+    font-size: 1.125rem;
+  }
+
+  /* 18px */
+
+  /* Scrollbar - Minimal */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--muted-foreground);
+    border-radius: 2px;
+    opacity: 0.2;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    opacity: 0.4;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    opacity: 0.15;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    opacity: 0.3;
+  }
+}
+
+/* Scoped Theme for Student View */
+.theme-student {
+  --primary: #18181b;
+  --primary-foreground: #ffffff;
+}
+
+.dark .theme-student {
+  --primary: #fafafa;
+  --primary-foreground: #09090b;
+}

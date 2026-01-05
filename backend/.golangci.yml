@@ -1,0 +1,52 @@
+run:
+  timeout: 5m
+  issues-exit-code: 1
+  tests: true
+
+linters-settings:
+  govet:
+    enable-all: true
+    disable:
+      - fieldalignment
+  gocyclo:
+    min-complexity: 15
+  gocognit:
+    min-complexity: 30
+  gosec:
+    excludes:
+      - G104 # Errors unhandled (handled by errcheck)
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+
+linters:
+  disable-all: true
+  enable:
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - typecheck
+    - unused
+    - gosec
+    - gocyclo
+    - gocognit
+    - bodyclose
+    - sqlclosecheck
+    - noctx
+    - copyloopvar
+    - makezero
+    - nilerr
+    - unconvert
+    - unparam
+    - dogsled
+    - errorlint
+    - forcetypeassert
+    - gofmt
+    - goimports
+
+issues:
+  exclude-use-default: false
+  max-issues-per-linter: 0
+  max-same-issues: 0
